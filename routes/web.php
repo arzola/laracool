@@ -14,25 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/helloworld', function () {
-    return 'Hello World';
-});
-
-Route::get('/helloworld/{param}', function ($param) {
-    return 'Hello ' . $param;
-});
-
-Route::post('/hellopost', function (\Illuminate\Http\Request $request) {
-    return 'Hello new ' . $request->input('name');
-});
-
-Route::put('/users/{id}', function ($value) {
-    return 'Updated ' . $value;
-});
-
-Route::delete('/users/{id}', function ($value) {
-    return 'Bye put ' . $value;
-});
-
-Route::get('/photos', 'Hello@index');

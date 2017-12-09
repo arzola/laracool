@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Session;
 use Tests\TestCase;
 
 class HttpMethodsTest extends TestCase
-{º
+{
     public function test_if_get_method_works()
     {
         $response = $this->get('/helloworld');
