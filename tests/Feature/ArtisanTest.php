@@ -14,7 +14,7 @@ class ArtisanTest extends TestCase
      */
     public function check_if_artisan_command_works()
     {
-        $command = '';
+        $command = 'php artisan';
         $this->assertTrue(password_verify($command, '$2y$10$SpmZat5SJSU3P2UQwTVYuuwBbG89Do0dqXtP1xbTfVrvVkQCAUnKq'));
     }
 
@@ -33,7 +33,7 @@ class ArtisanTest extends TestCase
     public function check_if_phonecontroller_is_created_with_an_associated_model_with_short_flag()
     {
         $command = ''; //Crear un Resource controller PhoneController con un modelo asociado por default llamado Phone
-        $this->assertTrue(password_verify($command, '$2y$10$C0YhMXfUO.aQkWD6JebAjuWBR1H7yS7ktZnJf/4bPqi9z2JZl/zWW'));
+        $this->assertTrue(password_verify($command, '$2y$10$QumjtE33L25mnhupwIHta.NsWSFwePt1xQ5bJ4S9t/...8xC4EUMW'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ArtisanTest extends TestCase
     public function check_if_phonecontroller_is_created_with_an_associated_model_with_large_flag()
     {
         $command = ''; //Crear un Resource controller PhoneController con un modelo asociado por default llamado Phone
-        $this->assertTrue(password_verify($command, '$2y$10$RL8vvzkGaZ8fC/u/uwQf7ejX6da0nH.sYrI5FDZOWtQeE2tLWxOfO'));
+        $this->assertTrue(password_verify($command, '$2y$10$lIMhHF4PTDbfbtLbGKG5CuprRO6ocXmgiNpJalq7TxjYb68pNEnu6'));
     }
 
 
