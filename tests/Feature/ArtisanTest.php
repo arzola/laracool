@@ -60,7 +60,7 @@ class ArtisanTest extends TestCase
      */
     public function check_test_command_to_create_a_feature_test()
     {
-        $command = ''; //Crear un Feature test
+        $command = ''; //Crear un Feature test llamado FeatureTest
         $this->assertTrue(password_verify($command, '$2y$10$OAiu0pYAeaCpy5OKXSQRIe7GI4/wydsZfK5bL0n1mKf2kJ4e1BOI6'));
     }
 
@@ -69,7 +69,7 @@ class ArtisanTest extends TestCase
      */
     public function check_test_command_to_create_a_unit_test()
     {
-        $command = ''; //Crear un test Unitario
+        $command = ''; //Crear un test unitario llamado FeatureTest
         $this->assertTrue(password_verify($command, '$2y$10$q/Sb4KX2YT3QAi978XVFS.0pOE5aYYKadBNnvD1cLM6ujKSocWHzu'));
     }
 
