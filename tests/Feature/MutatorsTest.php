@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Invoice;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Support\Facades\DB;
@@ -64,6 +65,47 @@ class MutatorsTest extends TestCase
         $this->assertEquals('$ 500', $savedInvoice->price->formatted());
         $this->assertEquals('Cheap', $savedInvoice->price->evaluation());
 
+    }
+
+    public function test_if_scope_works()
+    {
+        $invoice = new Invoice();
+        $invoice->price = 600;
+        $invoice->save();
+        $invoice2 = new Invoice();
+        $invoice2->price = 501;
+        $invoice2->save();
+        $invoice3 = new Invoice();
+        $invoice3->price = 400;
+        $invoice3->save();
+        $invoice4 = new Invoice();
+        $invoice4->price = 500;
+        $invoice4->save();
+        $invoices = Invoice::expensive()->get();
+        $this->assertCount(2, $invoices);
+    }
+
+    public function test_if_scope_with_param_works()
+    {
+        $invoice = new Invoice();
+        $invoice->price = 600;
+        $invoice->save();
+        $invoice2 = new Invoice();
+        $invoice2->price = 501;
+        $invoice2->save();
+        $invoice3 = new Invoice();
+        $invoice3->price = 400;
+        $invoice3->save();
+        $invoice4 = new Invoice();
+        $invoice4->price = 500;
+        $invoice4->save();
+        $invoices = Invoice::expensive(600)->get();
+        $this->assertCount(1, $invoices);
+    }
+
+    public function test_if_event_is_triggered()
+    {
+        User::create(['name' => 'Oscar', 'email' => 'os@icode.mx', 'password' => 12345]);
     }
 
 }
